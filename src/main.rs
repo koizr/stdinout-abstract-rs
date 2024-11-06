@@ -24,3 +24,25 @@ fn make_user() -> User {
         name: name.trim().to_string(),
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_print_name() {
+        let user = User {
+            name: "Alice".to_string(),
+        };
+
+        print_name(&user);
+
+        // 何を assert したらいい？
+    }
+
+    #[test]
+    fn test_make_user() {
+        let user = make_user();
+        assert_eq!(user.name, "Alice");
+    }
+}
