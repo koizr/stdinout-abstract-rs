@@ -1,6 +1,7 @@
 use std::io::Write;
 
 fn main() {
+    // ここは一旦気にしなくて良い。
     print!("Enter your name: ");
     std::io::stdout().flush().unwrap();
 
@@ -12,11 +13,15 @@ struct User {
     name: String,
 }
 
+/// ユーザーの名前を出力する。
 fn print_name(user: &User) {
+    // 標準出力してしまってる。
     println!("Name: {}", user.name);
 }
 
+/// 入力された名前を持つユーザーを作成する。
 fn make_user() -> User {
+    // 標準入力から名前を取得してしまってる。
     let mut name = String::new();
     std::io::stdin().read_line(&mut name).unwrap();
 
@@ -25,6 +30,7 @@ fn make_user() -> User {
     }
 }
 
+// テストが書けない！！！！
 #[cfg(test)]
 mod tests {
     use super::*;
