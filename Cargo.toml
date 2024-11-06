@@ -1,0 +1,7 @@
+[package]
+edition = "2021"
+name = "stdinout-wrapper"
+publish = false
+version = "0.1.0"
+
+[dependencies]
